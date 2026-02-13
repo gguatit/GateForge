@@ -5,9 +5,11 @@ function createPreset(presetType) {
         if (!confirm('기존 회로를 지우고 프리셋을 불러오시겠습니까?')) {
             return;
         }
-        gates = [];
-        connections = [];
     }
+    
+    // 배열 초기화
+    gates = [];
+    connections = [];
     
     switch(presetType) {
         case 'half-adder':
@@ -38,6 +40,9 @@ function createPreset(presetType) {
             createDeepNeuralNet();
             break;
     }
+    
+    // 화면 다시 그리기
+    draw();
 }
 
 // Half Adder (반가산기)
