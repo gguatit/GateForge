@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GateForge - 논리 게이트 시뮬레이터</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <h3>게이트 추가</h3>
+            <div class="gate-buttons">
+                <button class="gate-btn" data-gate="INPUT">INPUT</button>
+                <button class="gate-btn" data-gate="OUTPUT">OUTPUT</button>
+                <button class="gate-btn" data-gate="AND">AND</button>
+                <button class="gate-btn" data-gate="OR">OR</button>
+                <button class="gate-btn" data-gate="NOT">NOT</button>
+                <button class="gate-btn" data-gate="NAND">NAND</button>
+                <button class="gate-btn" data-gate="NOR">NOR</button>
+                <button class="gate-btn" data-gate="XOR">XOR</button>
+                <button class="gate-btn" data-gate="XNOR">XNOR</button>
+            </div>
+            
+            <div class="controls">
+                <button id="clearBtn" class="control-btn">모두 지우기</button>
+                <button id="viewMode" class="control-btn">보기 모드</button>
+                <button id="deleteMode" class="control-btn">삭제 모드</button>
+            </div>
+            
+            <h3 style="margin-top: 20px;">화면 크기</h3>
+            <div class="controls">
+                <button id="zoomOut" class="control-btn" style="font-size: 20px;">−</button>
+                <span id="zoomLevel" style="display: inline-block; width: 60px; text-align: center; font-weight: bold;">100%</span>
+                <button id="zoomIn" class="control-btn" style="font-size: 20px;">+</button>
+                <button id="zoomReset" class="control-btn">100%</button>
+            </div>
+
+            <h3 style="margin-top: 20px;">프리셋 회로</h3>
+            <div class="gate-buttons" style="margin-bottom: 10px;">
+                <button class="gate-btn" data-preset="half-adder">Half Adder</button>
+                <button class="gate-btn" data-preset="full-adder">Full Adder</button>
+                <button class="gate-btn" data-preset="sr-latch">SR Latch</button>
+                <button class="gate-btn" data-preset="multiplexer">2:1 MUX</button>
+                <button class="gate-btn" data-preset="decoder">2:4 Decoder</button>
+            </div>
+            
+            <h3 style="margin-top: 15px; color: #666;">AI 개념 회로</h3>
+            <div class="gate-buttons" style="margin-bottom: 10px;">
+                <button class="gate-btn" data-preset="xor-neural">XOR Neural Net</button>
+                <button class="gate-btn" data-preset="pattern-matcher">Pattern Matcher</button>
+                <button class="gate-btn" data-preset="simple-classifier">3-Bit Classifier</button>
+                <button class="gate-btn" data-preset="deep-neural" style="font-weight: bold;">Deep Neural Net</button>
+            </div>
+
+            <div class="info">
+                <h4>사용법</h4>
+                <ul>
+                    <li><strong>게이트 추가:</strong> 버튼을 클릭한 후 캔버스를 클릭</li>
+                    <li><strong>INPUT 토글:</strong> INPUT 게이트를 클릭하여 0/1 전환</li>
+                    <li><strong>연결:</strong> 출력 포트를 우클릭하고 입력 포트로 드래그</li>
+                    <li><strong>이동:</strong> 게이트를 드래그하여 이동</li>
+                    <li><strong>화면 이동:</strong> 마우스 휠 클릭 후 드래그</li>
+                    <li><strong>확대/축소:</strong> + - 버튼으로 화면 크기 조절</li>
+                    <li><strong>보기 모드:</strong> INPUT 값 변경만 가능 (추가/이동/삭제 불가)</li>
+                    <li><strong>프리셋:</strong> 기본 회로를 캔버스에 생성</li>
+                    <li><strong>삭제:</strong> 삭제 모드에서 게이트 클릭</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="js/Gate.js"></script>
+    <script src="js/Connection.js"></script>
+    <script src="js/presets.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
