@@ -116,6 +116,34 @@ class Connection {
 - **점 패턴 배경**: 20px 간격
 - **애니메이션**: 신호 흐름 시각화
 
+## 🚀 배포 (Cloudflare Pages)
+
+### 방법 1: Cloudflare Pages 대시보드
+1. Cloudflare Pages에 로그인
+2. 프로젝트 연결 (GitHub 저장소)
+3. 빌드 설정:
+   - **Build command**: (비워두기)
+   - **Build output directory**: `.`
+4. 배포 시작
+
+### 방법 2: Wrangler CLI
+```bash
+# wrangler.toml 파일이 이미 설정되어 있음
+npx wrangler deploy
+
+# 또는 직접 지정
+npx wrangler pages deploy . --project-name=gateforge
+```
+
+### wrangler.toml 설정
+```toml
+name = "gateforge"
+compatibility_date = "2026-02-13"
+
+[assets]
+directory = "."
+```
+
 ## 🧪 검증 완료 사항
 
 ✅ **모듈 구조 검증**
