@@ -1,0 +1,6 @@
+name = "gateforge"
+compatibility_date = "2026-02-13"
+
+# Cloudflare Pages 정적 자산 배포
+[assets]
+directory = "public"
